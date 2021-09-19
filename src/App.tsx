@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchRecommendationsRequest } from "./_redux/actions/recommendationsActions";
+import { RootState } from "./_redux/reducers/rootReducer";
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+  const { pending, recommendations, error } = useSelector(
+    (state: RootState) => state.recommendations
+  );
+
+  useEffect(() => {
+    dispatch(fetchRecommendationsRequest());
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {pending ? (
+        <div>Loading...</div>
+      ) : error ? (
+        <div>Error</div>
+      ) : (
+        recommendations?.map((recommendation, index) => (
+          <div key={recommendation.id}>
+            {++index}. {recommendation.title}
+          </div>
+        ))
+      )}
     </div>
   );
-}
+};
 
 export default App;
