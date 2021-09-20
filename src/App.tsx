@@ -1,7 +1,12 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRecommendationsRequest } from "./_redux/actions/recommendationsActions";
 import { RootState } from "./_redux/reducers/rootReducer";
+import Global from './styles/global';
+import RecommendationsCarousel from './components/RecommendationsCarousel';
+import Loading from "./components/Loading";
+import Error from "./components/Error";
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -14,19 +19,16 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <>
+      <Global/>
       {pending ? (
-        <div>Loading...</div>
+        <Loading/>
       ) : error ? (
-        <div>Error</div>
+        <Error errorMessage={error}/>
       ) : (
-        recommendations?.map((recommendation, index) => (
-          <div key={recommendation.id}>
-            {++index}. {recommendation.title}
-          </div>
-        ))
+        <RecommendationsCarousel recommendations={recommendations} />
       )}
-    </div>
+    </>
   );
 };
 

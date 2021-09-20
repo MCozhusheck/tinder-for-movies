@@ -29,7 +29,19 @@ export type FetchRecommendationsFailuer = {
   payload: FetchRecommendationsFailuerPayload;
 };
 
+export interface PutRecommendationAccept {
+  id: string;
+  type: typeof recommendationTypes.PUT_RECOMMENDATION_ACCEPT;
+}
+
+export interface PutRecommendationReject {
+  id: string;
+  type: typeof recommendationTypes.PUT_RECOMMENDATION_REJECT;
+}
+
 export type RecommendationsActions =
   | FetchRecommendationsRequest
   | FetchRecommendationsSuccess
-  | FetchRecommendationsFailuer;
+  | FetchRecommendationsFailuer
+  | PutRecommendationAccept
+  | PutRecommendationReject;

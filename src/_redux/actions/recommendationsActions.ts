@@ -5,10 +5,26 @@ import {
   FetchRecommendationsSuccessPayload,
   FetchRecommendationsFailuer,
   FetchRecommendationsFailuerPayload,
+  PutRecommendationAccept,
+  PutRecommendationReject,
 } from "../types/types";
 
 export const fetchRecommendationsRequest = (): FetchRecommendationsRequest => ({
   type: recommendationTypes.FETCH_RECOMMENDATION_REQUEST,
+});
+
+export const putRecommendationReject = (
+  id: string
+): PutRecommendationReject => ({
+  type: recommendationTypes.PUT_RECOMMENDATION_REJECT,
+  id,
+});
+
+export const putRecommendationAccept = (
+  id: string
+): PutRecommendationAccept => ({
+  type: recommendationTypes.PUT_RECOMMENDATION_ACCEPT,
+  id,
 });
 
 export const fetchRecommendationsSuccess = (

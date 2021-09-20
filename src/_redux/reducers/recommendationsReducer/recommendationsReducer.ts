@@ -2,7 +2,7 @@ import { recommendationTypes } from "../../Actiontypes/recommendationsTypes";
 import { RecommendationsActions, RecommendationState } from "../../types/types";
 
 const initialState: RecommendationState = {
-  pending: false,
+  pending: true,
   recommendations: [],
   error: null,
 };
@@ -27,6 +27,14 @@ export default (state = initialState, action: RecommendationsActions) => {
         pending: false,
         recommendations: [],
         error: action.payload.error,
+      };
+    case recommendationTypes.PUT_RECOMMENDATION_ACCEPT:
+      return {
+        ...state,
+      };
+    case recommendationTypes.PUT_RECOMMENDATION_REJECT:
+      return {
+        ...state,
       };
     default:
       return {
