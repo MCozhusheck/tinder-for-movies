@@ -14,7 +14,7 @@ import {
   rejectRecommendation,
 } from "./../../../api/recommendatiosApi";
 
-function* fetchReccomendationsSaga(): any {
+export function* fetchReccomendationsSaga(): any {
   try {
     const response = yield call(getRecommendations);
     yield put(fetchRecommendationsSuccess({ recommendations: response.data }));
