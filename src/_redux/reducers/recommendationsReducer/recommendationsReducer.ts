@@ -5,6 +5,7 @@ const initialState: RecommendationState = {
   pending: true,
   recommendations: [],
   error: null,
+  putError: null,
 };
 
 export default (state = initialState, action: RecommendationsActions) => {
@@ -28,13 +29,31 @@ export default (state = initialState, action: RecommendationsActions) => {
         recommendations: [],
         error: action.payload.error,
       };
-    case recommendationTypes.PUT_RECOMMENDATION_ACCEPT:
+    case recommendationTypes.PUT_RECOMMENDATION_ACCEPT_REQUEST:
       return {
         ...state,
       };
-    case recommendationTypes.PUT_RECOMMENDATION_REJECT:
+    case recommendationTypes.PUT_RECOMMENDATION_ACCEPT_SUCCESS:
       return {
         ...state,
+      };
+    case recommendationTypes.PUT_RECOMMENDATION_ACCEPT_FAILUER:
+      return {
+        ...state,
+        putError: action.payload.error,
+      };
+    case recommendationTypes.PUT_RECOMMENDATION_REJECT_REQUEST:
+      return {
+        ...state,
+      };
+    case recommendationTypes.PUT_RECOMMENDATION_REJECT_SUCCESS:
+      return {
+        ...state,
+      };
+    case recommendationTypes.PUT_RECOMMENDATION_REJECT_FAILUER:
+      return {
+        ...state,
+        putError: action.payload.error,
       };
     default:
       return {

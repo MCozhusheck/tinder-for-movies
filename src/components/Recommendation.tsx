@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import styled from 'styled-components'
-import { putRecommendationAccept, putRecommendationReject } from "../_redux/actions/recommendationsActions";
+import { putRecommendationAcceptRequest, putRecommendationRejectRequest } from "../_redux/actions/recommendationsActions";
 import { IRecommendation } from "../models/IRecommendation";
 
 const Header = styled.h1`
@@ -59,8 +59,8 @@ const Image = styled.img`
 const Reccomendation = ({ recommendation, onButtonClick }: {recommendation: IRecommendation, onButtonClick: () => void }) => {
   const dispatch = useDispatch();
   const {id, title, rating, imageURL} = recommendation
-  const accept = () => {dispatch(putRecommendationAccept(id)); onButtonClick();}
-  const reject = () => {dispatch(putRecommendationReject(id)); onButtonClick();}
+  const accept = () => {dispatch(putRecommendationAcceptRequest(id)); onButtonClick();}
+  const reject = () => {dispatch(putRecommendationRejectRequest(id)); onButtonClick();}
   return (
     <ReccomendationContainer>
       <Header>

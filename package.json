@@ -16,7 +16,7 @@
     "@types/redux-saga": "^0.10.5",
     "@types/styled-components": "^5.1.14",
     "axios": "^0.21.4",
-    "json-server": "^0.16.3",
+    "axios-mock-adapter": "^1.20.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-loader-spinner": "^4.0.0",
@@ -37,8 +37,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint . --ext .ts",
-    "json-server": "json-server --watch db/db.json"
+    "lint": "eslint . --ext .ts"
   },
   "eslintConfig": {
     "extends": [

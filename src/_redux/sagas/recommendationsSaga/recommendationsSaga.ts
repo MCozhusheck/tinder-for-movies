@@ -1,22 +1,18 @@
-import axios from "axios";
-import { all, call, put, takeLatest } from "redux-saga/effects";
-import { IRecommendation } from "../../../models/IRecommendation";
+import { all, call, put, takeLatest, takeEvery } from "redux-saga/effects";
 import {
   fetchRecommendationsSuccess,
   fetchRecommendationsFailuer,
-  putRecommendationAccept,
-  putRecommendationReject,
+  putRecommendationAcceptSuccess,
+  putRecommendationAcceptFailure,
+  putRecommendationRejectSuccess,
+  putRecommendationRejectFailure,
 } from "../../actions/recommendationsActions";
 import { recommendationTypes } from "../../Actiontypes/recommendationsTypes";
-
-const getRecommendations: any = () =>
-  axios.get<IRecommendation[]>("http://localhost:3000/recommendations");
-
-const acceptRecommendation: any = (id: string) =>
-  axios.put(`http://localhost:3000/recommendations/${id}/accept`);
-
-const rejectRecommendation: any = (id: string) =>
-  axios.put(`http://localhost:3000/recommendations/${id}/reject`);
+import {
+  getRecommendations,
+  acceptRecommendation,
+  rejectRecommendation,
+} from "./../../../api/recommendatiosApi";
 
 function* fetchReccomendationsSaga(): any {
   try {
@@ -30,16 +26,18 @@ function* fetchReccomendationsSaga(): any {
 function* putRecommendationAcceptSaga(action: any): any {
   try {
     yield acceptRecommendation(action.id);
+    yield put(putRecommendationAcceptSuccess());
   } catch (e: any) {
-    yield put(fetchRecommendationsFailuer({ error: e.message }));
+    yield put(putRecommendationAcceptFailure({ error: e.message }));
   }
 }
 
 function* putRecommendationRejectSaga(action: any): any {
   try {
     yield rejectRecommendation(action.id);
+    yield put(putRecommendationRejectSuccess());
   } catch (e: any) {
-    yield put(fetchRecommendationsFailuer({ error: e.message }));
+    yield put(putRecommendationRejectFailure({ error: e.message }));
   }
 }
 
@@ -49,14 +47,14 @@ function* recommendationsSaga(): any {
       recommendationTypes.FETCH_RECOMMENDATION_REQUEST,
       fetchReccomendationsSaga
     ),
-    // takeLatest(
-    //   recommendationTypes.PUT_RECOMMENDATION_ACCEPT,
-    //   putRecommendationAcceptSaga
-    // ),
-    // takeLatest(
-    //   recommendationTypes.PUT_RECOMMENDATION_REJECT,
-    //   putRecommendationRejectSaga
-    // ),
+    takeEvery(
+      recommendationTypes.PUT_RECOMMENDATION_ACCEPT_REQUEST,
+      putRecommendationAcceptSaga
+    ),
+    takeEvery(
+      recommendationTypes.PUT_RECOMMENDATION_REJECT_REQUEST,
+      putRecommendationRejectSaga
+    ),
   ]);
 }
 
