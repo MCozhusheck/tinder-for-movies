@@ -6,7 +6,6 @@ import Global from './styles/global';
 import RecommendationsCarousel from './components/RecommendationsCarousel';
 import Loading from "./components/Loading";
 import Error from "./components/Error";
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const App = () => {
   const dispatch = useDispatch();

@@ -1,6 +1,4 @@
-import { useDispatch } from "react-redux";
 import styled from 'styled-components'
-import { putRecommendationAcceptRequest, putRecommendationRejectRequest } from "../_redux/actions/recommendationsActions";
 import { IRecommendation } from "../models/IRecommendation";
 
 const Header = styled.h1`
@@ -56,11 +54,8 @@ const Image = styled.img`
   height: auto;
 `
 
-const Reccomendation = ({ recommendation, onButtonClick }: {recommendation: IRecommendation, onButtonClick: () => void }) => {
-  const dispatch = useDispatch();
+const Reccomendation = ({ recommendation, onAcceptButtonClick, onRejectButtonClick }: {recommendation: IRecommendation, onAcceptButtonClick: (id: string) => void, onRejectButtonClick: (id: string) => void }) => {
   const {id, title, rating, imageURL} = recommendation
-  const accept = () => {dispatch(putRecommendationAcceptRequest(id)); onButtonClick();}
-  const reject = () => {dispatch(putRecommendationRejectRequest(id)); onButtonClick();}
   return (
     <ReccomendationContainer>
       <Header>
@@ -70,8 +65,8 @@ const Reccomendation = ({ recommendation, onButtonClick }: {recommendation: IRec
         <Image src={imageURL} alt="movie poster"/>
       </ImageContainer>
       <FooterContainer>
-        <AcceptButton onClick={accept}> accept </AcceptButton>
-        <RejectButton onClick={reject}> reject </RejectButton>
+        <AcceptButton onClick={() => onAcceptButtonClick(id)}> accept </AcceptButton>
+        <RejectButton onClick={() => onRejectButtonClick(id)}> reject </RejectButton>
       </FooterContainer>
     </ReccomendationContainer>
   )
