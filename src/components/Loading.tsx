@@ -14,7 +14,7 @@ const Container = styled.div`
 const Loading: React.FC = () => {
 
   return (
-    <Container>
+    <Container data-testid="loading">
       <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} />
       <p>Loading recommendations...</p>
     </Container>

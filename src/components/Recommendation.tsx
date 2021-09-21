@@ -98,7 +98,7 @@ type Props = {
 const Reccomendation: React.FC<Props> = ({ recommendation, onAcceptButtonClick, onRejectButtonClick }) => {
   const {id, title, rating, imageURL} = recommendation
   return (
-    <ReccomendationContainer>
+    <ReccomendationContainer data-testid="recommendation">
       <Header>
         {`${title} (${rating}/10)`}
       </Header>

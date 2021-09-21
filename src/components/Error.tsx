@@ -16,7 +16,7 @@ type Props = {
 const Error: React.FC<Props> = ({ errorMessage }) => {
 
   return (
-    <Container>
+    <Container data-testid="error">
       <p>Failed to load recommendations. Error message: {errorMessage}</p>
     </Container>
   );

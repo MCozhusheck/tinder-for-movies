@@ -42,9 +42,11 @@ const RecommendationsCarousel: React.FC<Props> = ({ recommendations }) => {
   }
 
   return (
-    <Slider ref={slider} {...settings}>
-      {recommendations.map((recommendation => <Recommendation recommendation={recommendation} onAcceptButtonClick={accept} onRejectButtonClick={reject} key={recommendation.id}/>))}
-    </Slider>
+    <div data-testid="recommendations">
+      <Slider ref={slider} {...settings}>
+        {recommendations.map((recommendation => <Recommendation recommendation={recommendation} onAcceptButtonClick={accept} onRejectButtonClick={reject} key={recommendation.id}/>))}
+      </Slider>
+    </div>
   );
 };
 
