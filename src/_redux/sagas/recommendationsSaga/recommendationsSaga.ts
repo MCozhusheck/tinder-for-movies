@@ -16,25 +16,25 @@ import {
 
 export function* fetchReccomendationsSaga(): any {
   try {
-    const response = yield call(getRecommendations);
-    yield put(fetchRecommendationsSuccess({ recommendations: response.data }));
+    const data = yield call(getRecommendations);
+    yield put(fetchRecommendationsSuccess({ recommendations: data }));
   } catch (e: any) {
     yield put(fetchRecommendationsFailuer({ error: e.message }));
   }
 }
 
-function* putRecommendationAcceptSaga(action: any): any {
+export function* putRecommendationAcceptSaga(action: any): any {
   try {
-    yield acceptRecommendation(action.id);
+    yield call(acceptRecommendation, action.id);
     yield put(putRecommendationAcceptSuccess());
   } catch (e: any) {
     yield put(putRecommendationAcceptFailure({ error: e.message }));
   }
 }
 
-function* putRecommendationRejectSaga(action: any): any {
+export function* putRecommendationRejectSaga(action: any): any {
   try {
-    yield rejectRecommendation(action.id);
+    yield call(rejectRecommendation, action.id);
     yield put(putRecommendationRejectSuccess());
   } catch (e: any) {
     yield put(putRecommendationRejectFailure({ error: e.message }));
