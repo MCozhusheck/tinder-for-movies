@@ -89,7 +89,13 @@ const Image = styled.img`
   margin: auto;
 `
 
-const Reccomendation = ({ recommendation, onAcceptButtonClick, onRejectButtonClick }: {recommendation: IRecommendation, onAcceptButtonClick: (id: string) => void, onRejectButtonClick: (id: string) => void }) => {
+type Props = {
+  recommendation: IRecommendation,
+  onAcceptButtonClick: (id: string) => void,
+  onRejectButtonClick: (id: string) => void
+}
+
+const Reccomendation: React.FC<Props> = ({ recommendation, onAcceptButtonClick, onRejectButtonClick }) => {
   const {id, title, rating, imageURL} = recommendation
   return (
     <ReccomendationContainer>

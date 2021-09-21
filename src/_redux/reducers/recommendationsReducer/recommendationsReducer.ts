@@ -8,7 +8,10 @@ const initialState: RecommendationState = {
   putError: null,
 };
 
-export default (state = initialState, action: RecommendationsActions) => {
+export default (
+  state = initialState,
+  action: RecommendationsActions
+): RecommendationState => {
   switch (action.type) {
     case recommendationTypes.FETCH_RECOMMENDATION_REQUEST:
       return {

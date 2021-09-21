@@ -5,7 +5,11 @@ import Slider from "react-slick";
 import { useDispatch } from "react-redux";
 import { putRecommendationAcceptRequest, putRecommendationRejectRequest } from "../_redux/actions/recommendationsActions";
 
-const RecommendationsCarousel = ({ recommendations} : {recommendations: IRecommendation[]}) => {
+type Props = {
+  recommendations: IRecommendation[]
+}
+
+const RecommendationsCarousel: React.FC<Props> = ({ recommendations }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slider = useRef<Slider>(null);
   const dispatch = useDispatch();

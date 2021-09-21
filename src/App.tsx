@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRecommendationsRequest } from "./_redux/actions/recommendationsActions";
 import { RootState } from "./_redux/reducers/rootReducer";
@@ -7,7 +7,7 @@ import RecommendationsCarousel from './components/RecommendationsCarousel';
 import Loading from "./components/Loading";
 import Error from "./components/Error";
 
-const App = () => {
+const App: React.FC = () => {
   const dispatch = useDispatch();
   const { pending, recommendations, error } = useSelector(
     (state: RootState) => state.recommendations

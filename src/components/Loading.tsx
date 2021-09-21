@@ -11,7 +11,7 @@ const Container = styled.div`
   height: 100vh;
 `
 
-const Loading = () => {
+const Loading: React.FC = () => {
 
   return (
     <Container>

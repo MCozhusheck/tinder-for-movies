@@ -9,8 +9,11 @@ const Container = styled.div`
   width: 100vw;
   height: 100vh;
 `
+type Props = {
+  errorMessage: string,
+}
 
-const Error = ({ errorMessage }: { errorMessage: string }) => {
+const Error: React.FC<Props> = ({ errorMessage }) => {
 
   return (
     <Container>

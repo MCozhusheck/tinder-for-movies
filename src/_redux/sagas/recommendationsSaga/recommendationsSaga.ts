@@ -1,5 +1,9 @@
 import { all, call, put, takeLatest, takeEvery } from "redux-saga/effects";
 import {
+  PutRecommendationAcceptRequest,
+  PutRecommendationRejectRequest,
+} from "../../types/types";
+import {
   fetchRecommendationsSuccess,
   fetchRecommendationsFailuer,
   putRecommendationAcceptSuccess,
@@ -23,7 +27,9 @@ export function* fetchReccomendationsSaga(): any {
   }
 }
 
-export function* putRecommendationAcceptSaga(action: any): any {
+export function* putRecommendationAcceptSaga(
+  action: PutRecommendationAcceptRequest
+): any {
   try {
     yield call(acceptRecommendation, action.id);
     yield put(putRecommendationAcceptSuccess());
@@ -32,7 +38,9 @@ export function* putRecommendationAcceptSaga(action: any): any {
   }
 }
 
-export function* putRecommendationRejectSaga(action: any): any {
+export function* putRecommendationRejectSaga(
+  action: PutRecommendationRejectRequest
+): any {
   try {
     yield call(rejectRecommendation, action.id);
     yield put(putRecommendationRejectSuccess());
