@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/tinder-for-movies/static/js/main.c08ee3e4.chunk.js",
-    "main.js.map": "/tinder-for-movies/static/js/main.c08ee3e4.chunk.js.map",
+    "main.js": "/tinder-for-movies/static/js/main.5be9b805.chunk.js",
+    "main.js.map": "/tinder-for-movies/static/js/main.5be9b805.chunk.js.map",
     "runtime-main.js": "/tinder-for-movies/static/js/runtime-main.d0a3f3ef.js",
     "runtime-main.js.map": "/tinder-for-movies/static/js/runtime-main.d0a3f3ef.js.map",
-    "static/js/2.52fc0fe9.chunk.js": "/tinder-for-movies/static/js/2.52fc0fe9.chunk.js",
-    "static/js/2.52fc0fe9.chunk.js.map": "/tinder-for-movies/static/js/2.52fc0fe9.chunk.js.map",
+    "static/js/2.26dff4e5.chunk.js": "/tinder-for-movies/static/js/2.26dff4e5.chunk.js",
+    "static/js/2.26dff4e5.chunk.js.map": "/tinder-for-movies/static/js/2.26dff4e5.chunk.js.map",
     "static/js/3.f414c406.chunk.js": "/tinder-for-movies/static/js/3.f414c406.chunk.js",
     "static/js/3.f414c406.chunk.js.map": "/tinder-for-movies/static/js/3.f414c406.chunk.js.map",
     "index.html": "/tinder-for-movies/index.html",
-    "static/js/2.52fc0fe9.chunk.js.LICENSE.txt": "/tinder-for-movies/static/js/2.52fc0fe9.chunk.js.LICENSE.txt"
+    "static/js/2.26dff4e5.chunk.js.LICENSE.txt": "/tinder-for-movies/static/js/2.26dff4e5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d0a3f3ef.js",
-    "static/js/2.52fc0fe9.chunk.js",
-    "static/js/main.c08ee3e4.chunk.js"
+    "static/js/2.26dff4e5.chunk.js",
+    "static/js/main.5be9b805.chunk.js"
   ]
 }
