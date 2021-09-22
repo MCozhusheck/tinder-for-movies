@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/tinder-for-movies/static/js/main.5be9b805.chunk.js",
-    "main.js.map": "/tinder-for-movies/static/js/main.5be9b805.chunk.js.map",
+    "main.js": "/tinder-for-movies/static/js/main.3e264b72.chunk.js",
+    "main.js.map": "/tinder-for-movies/static/js/main.3e264b72.chunk.js.map",
     "runtime-main.js": "/tinder-for-movies/static/js/runtime-main.d0a3f3ef.js",
     "runtime-main.js.map": "/tinder-for-movies/static/js/runtime-main.d0a3f3ef.js.map",
     "static/js/2.26dff4e5.chunk.js": "/tinder-for-movies/static/js/2.26dff4e5.chunk.js",
@@ -14,6 +14,6 @@
   "entrypoints": [
     "static/js/runtime-main.d0a3f3ef.js",
     "static/js/2.26dff4e5.chunk.js",
-    "static/js/main.5be9b805.chunk.js"
+    "static/js/main.3e264b72.chunk.js"
   ]
 }
