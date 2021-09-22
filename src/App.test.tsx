@@ -2,7 +2,7 @@ import { waitFor } from '@testing-library/react'
 import App from './App';
 import { render } from './utils/testUtils';
 
-describe('test suite', () => {
+describe('Rendering loading and recommendations', () => {
   it("should render loading screen", () => {
     const {  getByTestId } = render(<App />);
     expect(getByTestId('loading')).toBeTruthy();

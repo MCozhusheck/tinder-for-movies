@@ -26,7 +26,6 @@ const ImageContainer = styled.div`
   width: 500px;
   height: 500px;
   height: auto;
-  float: left;
   margin: 3px;
   padding: 3px;
   display: flex;
@@ -100,8 +99,8 @@ const Reccomendation: React.FC<Props> = ({ recommendation, onAcceptButtonClick, 
         <Image src={imageURL} alt="movie poster"/>
       </ImageContainer>
       <FooterContainer>
-        <AcceptButton onClick={() => onAcceptButtonClick(id)}> accept </AcceptButton>
-        <RejectButton onClick={() => onRejectButtonClick(id)}> reject </RejectButton>
+        <AcceptButton onClick={() => onAcceptButtonClick(id)}>Accept</AcceptButton>
+        <RejectButton onClick={() => onRejectButtonClick(id)}>Reject</RejectButton>
       </FooterContainer>
     </ReccomendationContainer>
   )
