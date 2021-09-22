@@ -22,17 +22,32 @@ const Header = styled.h1`
     font-size: 24px;
   }
 `
+const ImageContainer = styled.div`
+  width: 500px;
+  height: 500px;
+  height: auto;
+  float: left;
+  margin: 3px;
+  padding: 3px;
+  display: flex;
+
+  @media only screen and (max-width: 450px) {
+    width: 300px;
+    height: 500px;
+  }
+`
+
+const Image = styled.img`
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+`
 
 const FooterContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 100px;
+  justify-content: space-evenly;
   width: 100%;
-
-  @media only screen and (max-width: 450px) {
-    gap: 30px;
-  }
 `
 const AcceptButton = styled.button`
   width: 150px;
@@ -66,27 +81,6 @@ const RejectButton = styled.button`
     width: 100px;
     height: 50px;
   }
-`
-
-const ImageContainer = styled.div`
-  width: 500px;
-  height: 500px;
-  height: auto;
-  float: left;
-  margin: 3px;
-  padding: 3px;
-  display: flex;
-
-  @media only screen and (max-width: 450px) {
-    width: 300px;
-    height: 500px;
-  }
-`
-
-const Image = styled.img`
-  max-width: 100%;
-  max-height: 100%;
-  margin: auto;
 `
 
 type Props = {
